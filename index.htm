@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Анельге</title>
+  <link rel="stylesheet" href="Style3.css">
+</head>
+<body>
+  <div class="envelope" id="envelope">
+    <div class="back"></div>
+    <div class="letter">
+      <div class="heart"></div>
+      <div class="text">
+        <a href="new.html">Осыған бас</a>
+        <p>
+          Негізі саған айтарым өте көп <br>
+          бірақ,
+          барлығын жазып <br>
+          жеткізе алмаймын <br>
+          сондықтан, 
+          мынау <br>
+          саған!
+        </p>
+      </div>
+    </div>
+    <div class="front"></div>
+    <div class="top"></div>
+    <div class="shadow"></div>
+    <div class="text1">
+      <h2>Қалайсыыын? Конверттің үстінен басшы👇🏼</h2>
+    </div>
+  </div>
+
+  <script>
+    // JavaScript для обработки клика
+    document.getElementById('envelope').addEventListener('click', function() {
+      // Переключение класса "opened" при каждом клике
+      this.classList.toggle('opened');
+    });
+  </script>
+</body>
+</html>

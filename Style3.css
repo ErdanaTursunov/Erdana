@@ -1,0 +1,317 @@
+
+
+
+/* -------------------------- */
+/* Основные стили для body */
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: #b784db;
+}
+
+/* Стили для конверта */
+.envelope {
+  position: relative;
+  cursor: pointer;
+  transform: scale(1.5); /* Увеличивает весь конверт */
+}
+
+/* Задняя часть конверта */
+.back {
+  position: relative;
+  width: 375px; /* Увеличено на 50% */
+  height: 300px; /* Увеличено на 50% */
+  background: #6247aa;
+}
+
+/* Передняя часть конверта */
+.front {
+  position: absolute;
+  border-right: 195px solid #815ac0; /* Увеличено на 50% */
+  border-top: 150px solid transparent;
+  border-bottom: 150px solid transparent;
+  height: 0;
+  width: 0;
+  top: 0;
+  left: 180px;
+  z-index: 3;
+}
+.front:before {
+  content: "";
+  position: absolute;
+  border-left: 195px solid #815ac0; /* Увеличено на 50% */
+  border-top: 150px solid transparent;
+  border-bottom: 150px solid transparent;
+  height: 0;
+  width: 0;
+  top: -150px;
+  left: -180px;
+}
+.front:after {
+  content: "";
+  position: absolute;
+  border-bottom: 157.5px solid #7251b5; /* Увеличено на 50% */
+  border-left: 187.5px solid transparent;
+  border-right: 187.5px solid transparent;
+  height: 0;
+  width: 0;
+  top: -7.5px;
+  left: -180px;
+}
+
+/* Верхняя часть конверта */
+.top {
+  position: absolute;
+  border-top: 157.5px solid #9163cb; /* Увеличено на 50% */
+  border-left: 187.5px solid transparent;
+  border-right: 187.5px solid transparent;
+  height: 0;
+  width: 0;
+  top: 0;
+  transform-origin: top;
+  transition: transform 0.4s;
+}
+
+/* Анимация открытия */
+.envelope.opened .top {
+  transform: rotateX(160deg);
+}
+
+/* Письмо внутри конверта */
+.letter {
+  position: absolute;
+  background: white;
+  width: 345px; /* Увеличено на 50% */
+  height: 270px; /* Увеличено на 50% */
+  top: 15px;
+  left: 15px;
+  transition: transform 0.2s;
+}
+
+/* Анимация для письма */
+.envelope.opened .letter {
+  transform: translateY(-150px); /* Увеличено на 50% */
+  z-index: 2;
+}
+
+/* Текстовые элементы */
+.text1 {
+  position: absolute;
+  color: white;
+  font-family: sans-serif;
+  top: -30%;
+}
+.text {
+  text-align: center;
+  font-size: 16px; /* Увеличено */
+  font-family: Arial, Helvetica, sans-serif;
+  margin-top: 30px;
+  font-weight: bold;
+  color: black;
+  position: relative;
+  top: -30px;
+  left: 30px;
+}
+
+
+/* Сердце */
+.heart {
+  background-color: red;
+  height: 70px;
+  width: 70px;
+  position: relative;
+  top: 20px;
+  left: 20px;
+  transform: rotate(-45deg);
+  box-shadow: -5px 10px 90px red;
+  animation: untoldcoding 0.8s linear infinite;
+}
+@keyframes untoldcoding {
+  0% {
+    transform: rotate(-45deg) scale(1.05);
+  }
+  70% {
+    transform: rotate(-45deg) scale(1);
+  }
+  100% {
+    transform: rotate(-45deg) scale(0.8);
+  }
+}
+.heart:before {
+  content: "";
+  position: absolute;
+  height: 70px;
+  width: 70px;
+  background-color: red;
+  top: -40px;
+  border-radius: 50px;
+}
+.heart:after {
+  content: "";
+  position: absolute;
+  height: 70px;
+  width: 70px;
+  background-color: red;
+  right: -40px;
+  border-radius: 50px;
+}
+
+@media (max-width: 700px) {
+  /* Стили для экрана шириной 700px и меньше */
+  /* Основные стили для body */
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: #b784db;
+}
+
+/* Стили для конверта */
+.envelope {
+  position: relative;
+  cursor: pointer;
+}
+
+/* Задняя часть конверта */
+.back {
+  position: relative;
+  width: 250px;
+  height: 200px;
+  background: #6247aa;
+}
+
+/* Передняя часть конверта */
+.front {
+  position: absolute;
+  border-right: 130px solid #815ac0;
+  border-top: 100px solid transparent;
+  border-bottom: 100px solid transparent;
+  height: 0;
+  width: 0;
+  top: 0;
+  left: 120px;
+  z-index: 3;
+}
+.front:before {
+  content: "";
+  position: absolute;
+  border-left: 130px solid #815ac0;
+  border-top: 100px solid transparent;
+  border-bottom: 100px solid transparent;
+  height: 0;
+  width: 0;
+  top: -100px;
+  left: -120px;
+}
+.front:after {
+  content: "";
+  position: absolute;
+  border-bottom: 105px solid #7251b5;
+  border-left: 125px solid transparent;
+  border-right: 125px solid transparent;
+  height: 0;
+  width: 0;
+  top: -5px;
+  left: -120px;
+}
+
+/* Верхняя часть конверта */
+.top {
+  position: absolute;
+  border-top: 105px solid #9163cb;
+  border-left: 125px solid transparent;
+  border-right: 125px solid transparent;
+  height: 0;
+  width: 0;
+  top: 0;
+  transform-origin: top;
+  transition: transform 0.4s;
+}
+
+/* Анимация открытия */
+.envelope.opened .top {
+  transform: rotateX(160deg);
+}
+
+/* Письмо внутри конверта */
+.letter {
+  position: absolute;
+  background: white;
+  width: 230px;
+  height: 180px;
+  top: 10px;
+  left: 10px;
+  transition: transform 0.2s;
+}
+
+/* Анимация для письма */
+.envelope.opened .letter {
+  transform: translateY(-100px);
+  z-index: 2;
+}
+
+/* Текстовые элементы */
+.text1 {
+  position: absolute;
+  color: white;
+  font-family: sans-serif;
+  top: -50%;
+}
+.text {
+  text-align: center;
+  font-size: 11px;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-top: 20px;
+  font-weight: bold;
+  color: black;
+  position: relative;
+  top: -20px;
+  left: 20px;
+}
+
+/* Сердце */
+.heart {
+  background-color: red;
+  height: 70px;
+  width: 70px;
+  position: relative;
+  top: 20px;
+  left: 20px;
+  transform: rotate(-45deg);
+  box-shadow: -5px 10px 90px red;
+  animation: untoldcoding 0.8s linear infinite;
+}
+@keyframes untoldcoding {
+  0% {
+    transform: rotate(-45deg) scale(1.05);
+  }
+  70% {
+    transform: rotate(-45deg) scale(1);
+  }
+  100% {
+    transform: rotate(-45deg) scale(0.8);
+  }
+}
+.heart:before {
+  content: "";
+  position: absolute;
+  height: 70px;
+  width: 70px;
+  background-color: red;
+  top: -40px;
+  border-radius: 50px;
+}
+.heart:after {
+  content: "";
+  position: absolute;
+  height: 70px;
+  width: 70px;
+  background-color: red;
+  right: -40px;
+  border-radius: 50px;
+}
+
+}
